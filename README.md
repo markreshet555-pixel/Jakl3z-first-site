@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Python Game</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00ff66;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #00ff66;
+            text-shadow: 0 0 10px #00ff66, 0 0 20px #003311;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .main-layout {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 15px;
+            max-width: 1350px;
+            width: 100%;
+        }
+        .ascii-art {
+            background: #030803;
+            border: 1px solid #00aa44;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 5.5px;
+            line-height: 5.5px;
+            white-space: pre;
+            color: #00ff66;
+            text-shadow: 0 0 5px rgba(0, 255, 102, 0.6);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+            text-align: left;
+        }
+        .ascii-title {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #00ff66;
+            border-bottom: 1px dashed #00aa44;
+            padding-bottom: 3px;
+            text-align: center;
+        }
+        .container {
+            width: 480px;
+            background: #050a05;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #00ff66;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
+        }
+        #console-output {
+            background: #000500;
+            color: #00ff66;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 12px;
+            border-radius: 3px;
+            height: 220px;
+            overflow-y: auto;
+            border: 1px solid #00aa44;
+            white-space: pre-wrap;
+            text-align: left;
+            margin-bottom: 12px;
+            box-shadow: inset 0 0 10px rgba(0, 255, 102, 0.2);
+        }
+        .input-area {
+            display: flex;
+            gap: 8px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #00ff66;
+            background: #000500;
+            color: #00ff66;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            outline: none;
+        }
+        input[type="text"]::placeholder {
+            color: #005522;
+        }
+        button {
+            padding: 10px 20px;
+            background: #000000;
+            color: #00ff66;
+            border: 1px solid #00ff66;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        button:hover {
+            background: #00ff66;
+            color: #000000;
+            box-shadow: 0 0 10px #00ff66;
+        }
+    </style>
+</head>
+<body onload="brython()">
+
+    <h1>[ SYSTEM TERMINAL: PYTHON GAME ]</h1>
+    
+    <div class="main-layout">
+        <!-- Sleva: Rize Kamishiro (Tokyo Ghoul) -->
+        <div class="ascii-art">
+            <div class="ascii-title">[ RIZE KAMISHIRO ]</div>
+<span style="color:#00ff88">
+          _________________
+        .-'                 `-.
+      .'       0000000      `.
+     /       00777777700      \
+    |       0775533355770      |
+    |      07531100113570      |
+    |      07519900991570      |
+    |      07519333391570      |
+    |      07513000031570      |
+    |       075100001570       |
+     \       0755555570       /
+      `.       0777770       .'
+        `-.     000       .-'
+     ______`-._______.-'______
+    /   TOKYO GHOUL 2026      \
+   |  [KAGUNE ACTIVATED]     |
+   |  07755311355770         |
+    \________________________/
+          // /     \ \\
+         // /       \ \\
+        // /         \ \\
+       (_/           \_)
+</span>
+        </div>
+
+        <!-- Po centru: Terminal -->
+        <div class="container">
+            <div id="console-output">Initializing terminal...\n</div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Vvedite komandu..." autofocus>
+                <button id="send-btn">ENTER</button>
+            </div>
+        </div>
+
+        <!-- Sprava: Mikasa Ackerman (Attack on Titan) -->
+        <div class="ascii-art">
+            <div class="ascii-title">[ MIKASA ACKERMAN ]</div>
+<span style="color:#00ff88">
+          _________________
+        .-'                 `-.
+      .'       9999999      `.
+     /       99777777799      \
+    |       0997533357990      |
+    |      0975311001135790    |
+    |      09719900991790      |
+    |      09719333391790      |
+    |      09713000031790      |
+    |       097100001790       |
+     \       0977777790       /
+      `.       0999990       .'
+        `-.     000       .-'
+     ______`-._______.-'______
+    /   ATTACK ON TITAN       \
+   |  [SCOUT REGIMENT]       |
+   |  099775313577990        |
+    \________________________/
+          // /     \ \\
+         // /       \ \\
+        // /         \ \\
+       (_/           \_)
+</span>
+        </div>
+    </div>
+
+    <script type="text/python">
+        import random
+        from browser import document, window
+
+        output = document["console-output"]
+        input_box = document["user-input"]
+        
+        game_state = "get_name"
+        name = ""
+        best_score = None
+        attempts = 1
+        max_attempts = 5
+        max_num = 10
+        secretnumber = 0
+
+        def print_log(text):
+            output.text += text + "\n"
+            output.scrollTop = output.scrollHeight
+
+        output.text = "what is your steam nickname?\n"
+
+        def check_input(ev=None):
+            global game_state, name, best_score, attempts, max_attempts, max_num, secretnumber
+            
+            val = input_box.value
+            if not val and game_state != "ask_restart": 
+                return
+            input_box.value = ""
+            
+            if game_state == "get_name":
+                name = val
+                print_log(val)
+                print_log(f"\nHello, very nice nickname: {name}!")
+                print_log("\nYou need to choose difficulty (0 = easy [1-10], 1 = medium [1-20], 2 = hard [1-50]):")
+                game_state = "choose_level"
+                
+            elif game_state == "choose_level":
+                try:
+                    choice = int(val)
+                    levels = [10, 20, 50]
+                    max_num = levels[choice]
+                    secretnumber = random.randint(1, max_num)
+                    attempts = 1
+                    print_log(f"Difficulty set. Guess the number from 1 to {max_num}: ")
+                    game_state = "playing"
+                except:
+                    print_log("Error! Please enter 0, 1 or 2:")
+                    
+            elif game_state == "playing":
+                try:
+                    guess = int(val)
+                    print_log(str(guess))
+                    
+                    if guess == secretnumber:
+                        print_log(f"Lucky man! You guessed it in {attempts} attempts!")
+                        if best_score is None or attempts < best_score:
+                            best_score = attempts
+                            print_log(">>> NEW RECORD SET! <<<")
+                        else:
+                            print_log(f"Best score for now: {best_score} attempts.")
+                        print_log("\nYou wanna play one more time? (y/n): ")
+                        game_state = "ask_restart"
+                    else:
+                        if attempts >= max_attempts:
+                            print_log(f"GAME OVER! YOU RUN OUT OF ATTEMPTS. The number was {secretnumber}.")
+                            print_log("\nYou wanna play one more time? (y/n): ")
+                            game_state = "ask_restart"
+                        else:
+                            if guess < secretnumber:
+                                print_log("Too low! Try higher.")
+                            else:
+                                print_log("Too high! Try lower.")
+                            attempts += 1
+                            print_log("Wrong number, try again!")
+                except:
+                    print_log("Error! Enter a valid number:")
+                    
+            elif game_state == "ask_restart":
+                print_log(val)
+                if val.lower() == "y":
+                    print_log("\nYou need to choose difficulty (0 = easy, 1 = medium, 2 = hard): ")
+                    game_state = "choose_level"
+                else:
+                    print_log("Terminal session closed. Refresh page to restart.")
+                    game_state = "finished"
+
+        document["send-btn"].bind("click", check_input)
+        
+        def on_key(event):
+            if event.key == "Enter":
+                check_input()
+                
+        input_box.bind("keydown", on_key)
+    </script>
+
+</body>
+</html>
