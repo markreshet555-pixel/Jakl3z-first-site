@@ -30,7 +30,7 @@
             justify-content: center;
             align-items: flex-start;
             gap: 15px;
-            max-width: 1250px;
+            max-width: 1300px;
             width: 100%;
         }
         .ascii-art {
@@ -38,13 +38,13 @@
             border: 1px solid #00aa44;
             padding: 8px;
             border-radius: 5px;
-            font-size: 6.5px;
-            line-height: 6.5px;
+            font-size: 6px;
+            line-height: 6px;
             white-space: pre;
             color: #00ff66;
-            text-shadow: 0 0 6px rgba(0, 255, 102, 0.6);
+            text-shadow: 0 0 5px rgba(0, 255, 102, 0.6);
             box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
-            text-align: center;
+            text-align: left;
         }
         .ascii-title {
             font-size: 10px;
@@ -53,6 +53,7 @@
             color: #00ff66;
             border-bottom: 1px dashed #00aa44;
             padding-bottom: 3px;
+            text-align: center;
         }
         .container {
             width: 480px;
@@ -115,47 +116,39 @@
 <body onload="brython()">
 
     <h1>[ SYSTEM TERMINAL: PYTHON GAME ]</h1>
-    
+
     <div class="main-layout">
-        <!-- Слева: Ризе (Токийский Гуль) из цифр -->
+        <!-- Sleva: Rize Kamishiro -->
         <div class="ascii-art">
-            <div class="ascii-title">[ RIZE ]</div>
+            <div class="ascii-title">[ RIZE KAMISHIRO ]</div>
 <span style="color:#00ff88">
-          00000000000000
-       0077777777777777777700
-     07775555555555555555557770
-    07531111111111111111111113570
-   0751999999999999999999999991570
-  075193333333333333333333333391570
-  0751300000000000000000000000031570
-  07510333333333333333333333333301570
-  07503777777777777777777777777730570
-  07507999999999999999999999999970570
-  0750795555555555555555555555970570
-  0750795311111111111111111135970570
-  075079530000000000000000035970570
-  07507953077777777777777035970570
-  07507953071111111111117035970570
-  07507953071000000000017035970570
-  07507953071077777777017035970570
-  07507953071073333337017035970570
-  0750795307107311137017035970570
-  075079530710730037017035970570
-  075079530710777777017035970570
-  075079530711111111117035970570
-  075079530777777777777035970570
-  075079530000000000000035970570
-  075079555555555555555555970570
-  0750799999999999999999999970570
-   07507777777777777777777770570
-    07530000000000000000000003570
-     077555555555555555555555770
-       0077777777777777777700
-          0000000000000000
+          .,--'""`--.,_
+        ,'              `-.
+      ,'    _..------.._    `.
+     /    ,'            `.    \
+    /    /                \    \
+   |    |                  |    |
+   |    |    @@@     @@@   |    |
+   |    |    @@@     @@@   |    |
+   |    |                  |    |
+   \    \        7         /    /
+    \    `.     ---     .'    /
+     `.    `-.______.-'    .'
+      `-.            .-'
+   ______`-.______.-'______
+  /                      \
+ |    R I Z E  G H OＵ L    |
+ |    07755311355770        |
+ |    [TOKIO GHOUL 2026]    |
+ \_______________________/
+         / /    \ \
+        | |      | |
+        | |      | |
+        /_/      \_\
 </span>
         </div>
 
-        <!-- По центру: Терминал -->
+        <!-- Po centru: Terminal -->
         <div class="container">
             <div id="console-output">Initializing terminal...\n</div>
 
@@ -165,41 +158,33 @@
             </div>
         </div>
 
-        <!-- Справа: Микаса (Атака Титанов) из цифр -->
+        <!-- Sprava: Mikasa Ackerman -->
         <div class="ascii-art">
-            <div class="ascii-title">[ MIKASA ]</div>
+            <div class="ascii-title">[ MIKASA ACKERMAN ]</div>
 <span style="color:#00ff88">
-          00000000000000
-       0099999999999999999900
-     09997777777777777777779990
-    097531111111111111111111135790
-   0971999999999999999999999991790
-  097193333333333333333333333391790
-  0971300000000000000000000000031790
-  09710333333333333333333333333301790
-  09703999999999999999999999999930790
-  09709555555555555555555555555590790
-  09709531111111111111111111113590790
-  09709530000000000000000000003590790
-  09709530777777777777777777703590790
-  09709530711111111111111111703590790
-  09709530710000000000000001703590790
-  09709530710999999999999901703590790
-  09709530710977777777777901703590790
-  09709530710973333333337901703590790
-  09709530710973111111137901703590790
-  0970953071097300000037901703590790
-  09709530710977777777777901703590790
-  0970953071111111111111111703590790
-  0970953077777777777777777703590790
-  09709530000000000000000000003590790
-  09709555555555555555555555555590790
-  09709999999999999999999999999990790
-   0970777777777777777777777777770790
-    0975300000000000000000000000035790
-     09975555555555555555555555557990
-       0099999999999999999900
-          0000000000000000
+          .,--'""`--.,_
+        ,'  /|    |\  `.
+      ,'   /_|    |_\   `.
+     /    ,'            `.    \
+    /    /   @@     @@   \    \
+   |    |     \     /    |    |
+   |    |      `----'    |    |
+   |    |      ____      |    |
+   |    |      /    \    |    |
+   \    \      \____/    /    /
+    \    `.            .'    /
+     `.    `-.______.-'    .'
+      `-.____----____.-'
+   ______`-.______.-'______
+  /                      \
+ |    M I K A S A    A T T    |
+ |    099775313577990       |
+ |    [SNK SCOUT 2026]      |
+ \_______________________/
+         / /    \ \
+        | |      | |
+        | |      | |
+        /_/      \_\
 </span>
         </div>
     </div>
@@ -210,7 +195,7 @@
 
         output = document["console-output"]
         input_box = document["user-input"]
-        
+
         game_state = "get_name"
         name = ""
         best_score = None
@@ -227,19 +212,19 @@
 
         def check_input(ev=None):
             global game_state, name, best_score, attempts, max_attempts, max_num, secretnumber
-            
+
             val = input_box.value
             if not val and game_state != "ask_restart": 
                 return
             input_box.value = ""
-            
+
             if game_state == "get_name":
                 name = val
                 print_log(val)
                 print_log(f"\nHello, very nice nickname: {name}!")
                 print_log("\nYou need to choose difficulty (0 = easy [1-10], 1 = medium [1-20], 2 = hard [1-50]):")
                 game_state = "choose_level"
-                
+
             elif game_state == "choose_level":
                 try:
                     choice = int(val)
@@ -251,12 +236,12 @@
                     game_state = "playing"
                 except:
                     print_log("Error! Please enter 0, 1 or 2:")
-                    
+
             elif game_state == "playing":
                 try:
                     guess = int(val)
                     print_log(str(guess))
-                    
+
                     if guess == secretnumber:
                         print_log(f"Lucky man! You guessed it in {attempts} attempts!")
                         if best_score is None or attempts < best_score:
@@ -280,7 +265,7 @@
                             print_log("Wrong number, try again!")
                 except:
                     print_log("Error! Enter a valid number:")
-                    
+
             elif game_state == "ask_restart":
                 print_log(val)
                 if val.lower() == "y":
@@ -291,11 +276,11 @@
                     game_state = "finished"
 
         document["send-btn"].bind("click", check_input)
-        
+
         def on_key(event):
             if event.key == "Enter":
                 check_input()
-                
+
         input_box.bind("keydown", on_key)
     </script>
 
