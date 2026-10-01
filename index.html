@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hacker Python Game</title>
-    <!-- Подключаем Brython для работы Python в браузере -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
     <style>
@@ -89,17 +88,14 @@
     <h1>[ SYSTEM TERMINAL: PYTHON GAME ]</h1>
     
     <div class="container">
-        <!-- Консоль для вывода Python -->
-        <div id="console-output">Инициализация терминала...\n</div>
+        <div id="console-output"> Inicializatsiya terminala...\n</div>
 
-        <!-- Поле ввода для игрока -->
         <div class="input-area">
-            <input type="text" id="user-input" placeholder="Введите команду или число..." autofocus>
-            <button id="send-btn" onclick="check_input()">ENTER</button>
+            <input type="text" id="user-input" placeholder="Vvedite komandu ili chislo..." autofocus>
+            <button id="send-btn">ENTER</button>
         </div>
     </div>
 
-    <!-- Твой Python-код, адаптированный под браузер -->
     <script type="text/python">
         import random
         from browser import document, window
@@ -107,7 +103,6 @@
         output = document["console-output"]
         input_box = document["user-input"]
         
-        # Переменные состояния игры
         game_state = "get_name"
         name = ""
         best_score = None
@@ -120,13 +115,14 @@
             output.text += text + "\n"
             output.scrollTop = output.scrollHeight
 
-        # Начальный вывод
         output.text = "what is your steam nickname?\n"
 
-        def check_input(*args):
+        def check_input(ev=None):
             global game_state, name, best_score, attempts, max_attempts, max_num, secretnumber
             
             val = input_box.value
+            if not val and game_state != "ask_restart": 
+                return
             input_box.value = ""
             
             if game_state == "get_name":
@@ -183,15 +179,17 @@
                     print_log("\nYou need to choose difficulty (0 = easy, 1 = medium, 2 = hard): ")
                     game_state = "choose_level"
                 else:
-                
                     print_log("Terminal session closed. Refresh page to restart.")
                     game_state = "finished"
 
-        def on_key_down(event):
+        # Privyazyvaem knopku myshkoy i klavishu Enter cherez JS-sobytiya
+        document["send-btn"].bind("click", check_input)
+        
+        def on_key(event):
             if event.key == "Enter":
                 check_input()
                 
-        input_box.bind("keydown", on_key_down)
+        input_box.bind("keydown", on_key)
     </script>
 
 </body>
