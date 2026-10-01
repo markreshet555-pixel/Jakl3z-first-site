@@ -23,23 +23,23 @@
             letter-spacing: 2px;
             margin-bottom: 10px;
             text-align: center;
-            font-size: 22px;
+            font-size: 20px;
         }
         .main-layout {
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 20px;
-            max-width: 1200px;
+            gap: 15px;
+            max-width: 1050px;
             width: 100%;
         }
         .ascii-art {
             background: #030803;
             border: 1px solid #00aa44;
-            padding: 10px;
+            padding: 8px;
             border-radius: 5px;
-            font-size: 9px;
-            line-height: 9px;
+            font-size: 8px;
+            line-height: 8px;
             white-space: pre;
             color: #00ff66;
             text-shadow: 0 0 5px rgba(0, 255, 102, 0.4);
@@ -47,7 +47,7 @@
             text-align: center;
         }
         .ascii-title {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: bold;
             margin-bottom: 5px;
             color: #00ff66;
@@ -55,11 +55,9 @@
             padding-bottom: 3px;
         }
         .container {
-            flex: 1;
-            max-width: 650px;
-            width: 100%;
+            width: 520px;
             background: #050a05;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             border: 1px solid #00ff66;
             box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
@@ -68,36 +66,36 @@
             background: #000500;
             color: #00ff66;
             font-family: 'Courier New', Courier, monospace;
-            padding: 15px;
+            padding: 12px;
             border-radius: 3px;
-            height: 240px;
+            height: 220px;
             overflow-y: auto;
             border: 1px solid #00aa44;
             white-space: pre-wrap;
             text-align: left;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             box-shadow: inset 0 0 10px rgba(0, 255, 102, 0.2);
         }
         .input-area {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
         input[type="text"] {
             flex: 1;
-            padding: 12px;
+            padding: 10px;
             border-radius: 3px;
             border: 1px solid #00ff66;
             background: #000500;
             color: #00ff66;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
+            font-size: 14px;
             outline: none;
         }
         input[type="text"]::placeholder {
             color: #005522;
         }
         button {
-            padding: 12px 25px;
+            padding: 10px 20px;
             background: #000000;
             color: #00ff66;
             border: 1px solid #00ff66;
@@ -119,13 +117,13 @@
     <h1>[ SYSTEM TERMINAL: PYTHON GAME ]</h1>
     
     <div class="main-layout">
-        <!-- Слева: Ризе из цифр и знаков -->
+        <!-- Sleva: Rize -->
         <div class="ascii-art">
             <div class="ascii-title">[ RIZE ]</div>
 <span style="color:#00ff88">
-    0000000000
-   0777777777770
-  07755555557770
+   0000000000
+  0777777777770
+ 07755555557770
  0753111111135770
  0751999999915770
  075193333915770
@@ -151,7 +149,7 @@
 </span>
         </div>
 
-        <!-- По центру: Терминал с игрой -->
+        <!-- Po centru: Terminal -->
         <div class="container">
             <div id="console-output">Initializing terminal...\n</div>
 
@@ -161,13 +159,13 @@
             </div>
         </div>
 
-        <!-- Справа: Микаса из цифр и знаков -->
+        <!-- Sprava: Mikasa -->
         <div class="ascii-art">
             <div class="ascii-title">[ MIKASA ]</div>
 <span style="color:#00ff88">
-    0000000000
-   0999999999990
-  09977777779990
+   0000000000
+  0999999999990
+ 09977777779990
  09753111111357990
  0973199999137990
  0973193339137990
