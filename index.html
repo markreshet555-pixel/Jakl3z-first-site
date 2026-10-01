@@ -12,7 +12,7 @@
             color: #00ff66;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,14 +21,45 @@
             color: #00ff66;
             text-shadow: 0 0 10px #00ff66, 0 0 20px #003311;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 22px;
+        }
+        .main-layout {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .ascii-art {
+            background: #030803;
+            border: 1px solid #00aa44;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 9px;
+            line-height: 9px;
+            white-space: pre;
+            color: #00ff66;
+            text-shadow: 0 0 5px rgba(0, 255, 102, 0.4);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
             text-align: center;
         }
+        .ascii-title {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #00ff66;
+            border-bottom: 1px dashed #00aa44;
+            padding-bottom: 3px;
+        }
         .container {
-            max-width: 700px;
+            flex: 1;
+            max-width: 650px;
             width: 100%;
             background: #050a05;
-            padding: 25px;
+            padding: 20px;
             border-radius: 5px;
             border: 1px solid #00ff66;
             box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
@@ -39,7 +70,7 @@
             font-family: 'Courier New', Courier, monospace;
             padding: 15px;
             border-radius: 3px;
-            height: 250px;
+            height: 240px;
             overflow-y: auto;
             border: 1px solid #00aa44;
             white-space: pre-wrap;
@@ -87,12 +118,79 @@
 
     <h1>[ SYSTEM TERMINAL: PYTHON GAME ]</h1>
     
-    <div class="container">
-        <div id="console-output"> Inicializatsiya terminala...\n</div>
+    <div class="main-layout">
+        <!-- Слева: Ризе из цифр и знаков -->
+        <div class="ascii-art">
+            <div class="ascii-title">[ RIZE ]</div>
+<span style="color:#00ff88">
+    0000000000
+   0777777777770
+  07755555557770
+ 0753111111135770
+ 0751999999915770
+ 075193333915770
+  07513000315770
+   075103015770
+    0755555770
+     07777770
+    057777750
+   0530000350
+  05307770350
+  05107770150
+  05107770150
+   0530000350
+    05555550
+    07777770
+   0755555770
+  075300035770
+ 07530777035770
+ 07510777015770
+  075100015770
+   0755555770
+    00000000
+</span>
+        </div>
 
-        <div class="input-area">
-            <input type="text" id="user-input" placeholder="Vvedite komandu ili chislo..." autofocus>
-            <button id="send-btn">ENTER</button>
+        <!-- По центру: Терминал с игрой -->
+        <div class="container">
+            <div id="console-output">Initializing terminal...\n</div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Vvedite komandu..." autofocus>
+                <button id="send-btn">ENTER</button>
+            </div>
+        </div>
+
+        <!-- Справа: Микаса из цифр и знаков -->
+        <div class="ascii-art">
+            <div class="ascii-title">[ MIKASA ]</div>
+<span style="color:#00ff88">
+    0000000000
+   0999999999990
+  09977777779990
+ 09753111111357990
+ 0973199999137990
+ 0973193339137990
+  09731300313790
+   0973103013790
+    0977777790
+     09999990
+    079999970
+   07500000570
+  075099990570
+  0730999903570
+  0730999903570
+   07500000570
+    077777770
+    099999990
+   09777777990
+  097500005990
+ 0975099905990
+ 0973099903990
+  097300003990
+   09777777990
+    00000000
+</span>
         </div>
     </div>
 
@@ -182,7 +280,6 @@
                     print_log("Terminal session closed. Refresh page to restart.")
                     game_state = "finished"
 
-        # Privyazyvaem knopku myshkoy i klavishu Enter cherez JS-sobytiya
         document["send-btn"].bind("click", check_input)
         
         def on_key(event):
